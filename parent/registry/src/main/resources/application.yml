@@ -1,0 +1,13 @@
+server:
+  port: 8000
+
+eureka:
+  instance:
+    hostname: localhost #eureka服务端的实例名称,因为可能会有集群
+  client:
+    register-with-eureka: false #false表示不相注册中心注册自己
+    fetch-registry: false #false表示自己就是注册中心
+    service-url:
+      defaultZone: http://localhost:8000/eureka/ #设置与Eureka Server交互的地址查询服务和注册服务都需要依赖这个地址
+  server:
+    enable-self-preservation: false
